@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Hello Spring Cloud Connectors
 ============
 
@@ -59,3 +60,6 @@ $ cf restart
 ~~~
 
 Consult the [Pivotal Cloud Foundry documentation](http://docs.pivotal.io/) for more details.
+=======
+# cfquest
+>>>>>>> 338ceec114b96845307a952a859e6bb6390bc66e
