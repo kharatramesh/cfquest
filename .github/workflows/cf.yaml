@@ -33,7 +33,8 @@ jobs:
           jfrog --version
           jfrog c use priar
           jfrog rt ping
-          curl -H "X-JFrog-Art-Api:AKCp8kqqmokih18TMm2CaAXwcJRsgLhcqPqAWDY6gwa55Aa8FYYUK2QseceAPKg9UjE5v1XPi" -T '${{ github.workspace }}/target/*.jar' "https://priar.jfrog.io/artifactory/priar/"
+          echo '${{ github.workspace }}/target/*.jar'
+          # curl -H "X-JFrog-Art-Api:AKCp8kqqmokih18TMm2CaAXwcJRsgLhcqPqAWDY6gwa55Aa8FYYUK2QseceAPKg9UjE5v1XPi" -T '${{ github.workspace }}/target/*.jar' "https://priar.jfrog.io/artifactory/priar/"
   deploy:
     runs-on: ubuntu-latest
     needs: build
