@@ -24,7 +24,15 @@ jobs:
         with:
           name: java-app
           path: '${{ github.workspace }}/target/*.jar'
-        
+      - name: upload artifact to jfrog 
+        uses: jfrog/setup-jfrog-cli@v1
+        env:
+           JF_ARTIFACTORY_1: ${{ secrets.artifactory_token_1 }}
+      - run: |
+          jfrog --version
+          jfrog c use priar
+          jfrog rt ping
+          jfrog rt u '${{ github.workspace }}/target/*.jar' artifacts/
 
   deploy:
     runs-on: ubuntu-latest
