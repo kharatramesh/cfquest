@@ -34,6 +34,7 @@ jobs:
           jfrog c use priar
           jfrog rt ping
           echo '${{ github.workspace }}/target/*.jar'
+          jfrog rt upload --flat=false '${{ github.workspace }}/target/*.jar' priar/
           # curl -H "X-JFrog-Art-Api:AKCp8kqqmokih18TMm2CaAXwcJRsgLhcqPqAWDY6gwa55Aa8FYYUK2QseceAPKg9UjE5v1XPi" -T hello-spring-cloud-0.0.1.BUILD-SNAPSHOT.jar "https://priar.jfrog.io/artifactory/priar/"
   deploy:
     runs-on: ubuntu-latest
